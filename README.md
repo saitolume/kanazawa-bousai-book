@@ -15,5 +15,5 @@
 $ git close git@github.com:saitoeku3/kanazawa-bousai-book.git
 $ cd kanazawa-bousai-book
 $ npm ci
-$ npm run searve
+$ npm run serve
 ```
