@@ -1,0 +1,16 @@
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  color: #333433;
+  font-family: -apple-system, 'Helvetica Neue', '游ゴシック体', YuGothic, sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #333433;
+  text-decoration: none;
+}
