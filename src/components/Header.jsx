@@ -1,5 +1,7 @@
 'use strict'
 
+const { Link } = ReactRouterDOM
+
 const headerStyles = {
   wrapper: {
     backgroundColor: '#fff',
@@ -37,17 +39,18 @@ const headerStyles = {
   }
 }
 
+
 const Header = ({ onClickSyncButton, style }) => {
   return (
     <div style={{ ...headerStyles.wrapper, ...style }}>
-      <a href="/index.html" style={headerStyles.title}>
+      <Link to="/" style={headerStyles.title}>
         <i className="fas fa-book" style={headerStyles.bookIcon}></i>
         金沢防災ブック
-      </a>
+      </Link>
       <div style={headerStyles.buttonList}>
-        <div style={headerStyles.iconButton}>
+        <Link to="/bookmarks" style={headerStyles.iconButton}>
           <i className="fas fa-star" style={headerStyles.icon}></i>
-        </div>
+        </Link>
         <div style={headerStyles.iconButton} onClick={onClickSyncButton}>
           <i className="fas fa-sync" style={headerStyles.icon}></i>
         </div>

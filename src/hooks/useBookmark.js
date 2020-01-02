@@ -6,9 +6,9 @@ const useBookmark = () => {
   /**
    * 避難所の id を受け取ってブックマークに追加する
    */
-  const addBookmark = React.useCallback(id => {
+  const addBookmark = React.useCallback(item => {
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
-    setBookmarks([...bookmarks, id])
+    setBookmarks([...bookmarks, item])
   }, [setBookmarks])
 
   /**
@@ -16,13 +16,13 @@ const useBookmark = () => {
    */
   const removeBookmark = React.useCallback(id => {
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []
-    setBookmarks(bookmarks.filter(bookmark => bookmark !== id))
+    setBookmarks(bookmarks.filter(bookmark => bookmark.id !== id))
   }, [setBookmarks])
 
   /**
    * 避難所の id を受け取ってブックマークに含まれるか boolean を返す関数
    */
-  const isBookmarked = React.useCallback(id => bookmarks.some(bookmark => bookmark === id), [bookmarks])
+  const isBookmarked = React.useCallback(id => bookmarks.some(bookmark => bookmark.id === id), [bookmarks])
 
   React.useEffect(() => {
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || []

@@ -49,7 +49,7 @@ const ShelterCard = ({ shelter, style, bookmarked, addBookmark, removeBookmark }
     if (bookmarked) {
       removeBookmark(shelter.id)
     } else {
-      addBookmark(shelter.id)
+      addBookmark(shelter)
     }
   }
 
