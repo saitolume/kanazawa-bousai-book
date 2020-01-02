@@ -27,18 +27,20 @@ const appStyles = {
 
 const App = () => {
   const { bookmarks, addBookmark, removeBookmark, isBookmarked } = useBookmark()
-  const { latitude, longitude, syncPosition } = useGeolocation()
-  const [currentShelters, previousPage, nextPage] = usePagenation({ items: map.data, perPage })
-
-  React.useEffect(() => {
-    syncPosition()
-  }, [])
+  const { location, syncLocation } = useGeolocation()
+  const [currentShelters, previousPage, nextPage] = usePagenation({
+    items: map.data.sort((a, b) =>
+      Math.abs(Math.abs(b.latitude - location.latitude) - Math.abs(b.longitude - location.longitude)) -
+      Math.abs(Math.abs(a.latitude - location.latitude) - Math.abs(a.longitude - location.longitude))
+    ),
+    perPage
+  })
 
   if (isPC) return <p>本アプリはスマートフォンのみに対応しています。</p>
 
   return (
     <React.Fragment>
-      <Header onClickSyncButton={syncPosition} />
+      <Header onClickSyncButton={syncLocation} />
       <div style={appStyles.wrapper}>
         <h1 style={appStyles.title}>避難所リスト</h1>
         <ul style={appStyles.shelterList}>

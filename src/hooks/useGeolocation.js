@@ -3,13 +3,13 @@
 /**
  * latitude: 緯度
  * longitude: 経度
- * syncPosition: 現在地の更新
+ * syncLocation: 現在地の更新
  */
 const useGeolocation = () => {
   const [latitude, setLatitude] = React.useState(0)
   const [longitude, setLongitude] = React.useState(0)
 
-  const syncPosition = React.useCallback(() => {
+  const syncLocation = React.useCallback(() => {
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords
       setLatitude(latitude)
@@ -17,14 +17,15 @@ const useGeolocation = () => {
     })
   }, [])
 
-  // Logger
   React.useEffect(() => {
-    console.log(latitude, longitude)
-  }, [latitude, longitude])
+    syncLocation()
+  }, [])
 
   return {
-    latitude,
-    longitude,
-    syncPosition
+    location: {
+      latitude,
+      longitude
+    },
+    syncLocation
   }
 }
