@@ -12,7 +12,7 @@
 ## 開発手順
 
 ```bash
-$ git close git@github.com:saitoeku3/kanazawa-bousai-book.git
+$ git clone git@github.com:saitoeku3/kanazawa-bousai-book.git
 $ cd kanazawa-bousai-book
 $ npm ci
 $ npm run serve
