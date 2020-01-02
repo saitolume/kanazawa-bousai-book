@@ -3,7 +3,7 @@
   "description": "金沢の防災情報を確認できるアプリケーション",
   "private": true,
   "scripts": {
-    "serve": "browser-sync start --server src --files \"src/**/*.html, src/**/*.css, src/**/*.js\""
+    "serve": "browser-sync start --server src --files \"src/**/*.html, src/**/*.css, src/**/*.js, src/**/*.jsx\""
   },
   "devDependencies": {
     "browser-sync": "^2.26.7"
