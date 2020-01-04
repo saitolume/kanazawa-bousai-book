@@ -45,7 +45,8 @@ const shelterCardStyles = {
 }
 
 const ShelterCard = ({ shelter, style, bookmarked, addBookmark, removeBookmark }) => {
-  const toggleBookmark = () => {
+  const toggleBookmark = event => {
+    event.preventDefault()
     if (bookmarked) {
       removeBookmark(shelter.id)
     } else {
