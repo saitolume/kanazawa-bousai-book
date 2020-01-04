@@ -12,8 +12,9 @@ const App = () => {
     <BrowserRouter>
       <Header onClickSyncButton={syncLocation} />
       <Switch>
-        <Route exact path="/" component={Index} />
+        <Route exact path="/" component={Root} />
         <Route exact path="/bookmarks" component={Bookmarks} />
+        <Route exact path="/shelter/:id" component={Shelter} />
       </Switch>
     </BrowserRouter>
   )
