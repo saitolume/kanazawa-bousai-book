@@ -1,5 +1,7 @@
 # 金沢防災ブック
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8eda9c93-ce63-4ce8-bb9b-c0d151818216/deploy-status)](https://app.netlify.com/sites/kit-bousai-book/deploys)
+
 > 金沢の防災情報を確認できるアプリケーション
 
 ![](./image.png)
