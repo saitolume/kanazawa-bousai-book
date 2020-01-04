@@ -29,20 +29,19 @@ const rootStyles = {
 const Root = () => {
   const { addBookmark, removeBookmark, isBookmarked } = useBookmark()
   const { location } = useGeolocation()
+
+  const compareDistances = (a, b) =>
+    Math.pow(
+      Math.pow(a.latitude - location.latitude, 2) + Math.pow(a.longitude - location.longitude, 2),
+      0.5
+    ) -
+    Math.pow(
+      Math.pow(b.latitude - location.latitude, 2) + Math.pow(b.longitude - location.longitude, 2),
+      0.5
+    )
+
   const [currentShelters, previousPage, nextPage] = usePagenation({
-    items: map.data.sort(
-      (a, b) =>
-        Math.pow(
-          Math.pow(a.latitude - location.latitude, 2) +
-            Math.pow(a.longitude - location.longitude, 2),
-          0.5
-        ) -
-        Math.pow(
-          Math.pow(b.latitude - location.latitude, 2) +
-            Math.pow(b.longitude - location.longitude, 2),
-          0.5
-        )
-    ),
+    items: map.data.sort(compareDistances),
     perPage
   })
 
