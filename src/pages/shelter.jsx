@@ -29,6 +29,10 @@ const Shelter = () => {
   return (
     <div style={shelterStyles.wrapper}>
       <h2>{shelter.name}</h2>
+      <div>{shelter.postcode}</div>
+      <div>{shelter.address}</div>
+      <div>{shelter.phoneNumber}</div>
+      <div>{shelter.description}</div>
       {isDisplayed && <GoogleMap current={location} target={shelter} style={shelterStyles.map} />}
     </div>
   )
