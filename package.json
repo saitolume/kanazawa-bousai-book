@@ -6,6 +6,6 @@
     "serve": "browser-sync start --server src --files \"src/**/*.html, src/**/*.css, src/**/*.js, src/**/*.jsx\""
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.27.10"
   }
 }
